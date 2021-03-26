@@ -64,8 +64,8 @@ def read_items(skip: int = 0, limit: int = 100, db: Session = Depends(get_db)):
     return items
 
 
-# @app.delete("/items/{user_id}", response_model=schemas.Item)
-# def delete_user_item(
-#     user_id: int, item: schemas.Item, db: Session = Depends(get_db())
-# ):
-#     return crud.delete_user_item(db, item, user_id)
+@app.delete("/items/{user_id}", response_model=schemas.Item)
+def delete_user_item(
+    user_id: int, db: Session = Depends(get_db)
+):
+    return crud.delete_user_item(db, user_id)

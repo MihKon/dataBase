@@ -36,9 +36,9 @@ def create_user_item(db: Session, item: schemas.ItemCreate, user_id: int):
     return db_item
 
 
-def delete_user_item(db: Session, item: schemas.Item, user_id: int):
+def delete_user_item(db: Session, user_id: int):
     db_item = db.query(models.Item).filter(models.Item.owner_id == user_id)
     db.delete(db_item)
     db.commit()
-    # db.refresh(db_item)
+    db.refresh(db_item)
     return db_item
