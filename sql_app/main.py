@@ -54,8 +54,10 @@ def delete_item(item_id: int, db: Session = Depends(get_db)):
     return crud.delete_item_by_id(db, item_id)
 
 
-# @app.put("/items/{item_id}", response_model=schemas.Item)
-# def update_item(item_id: int, item: schemas.Item, db: Session = Depends(get_db)):
-#     if item.id == 0:
-#         item.id = item_id
-#     return crud.update_item_by_id(db, item_id, item)
+# @app.put("/items/{item_id} {field1} {field2}", response_model=schemas.Item)
+# def update_item(item_id: int, field1: str, field2: str, db: Session = Depends(get_db)):
+#     return crud.update_item_by_id(db, item_id, field1, field2)
+
+@app.put("/items/", response_model=schemas.Item)
+def update_item(item: schemas.ItemCreate, db: Session = Depends(get_db)):
+    return crud.update_item_by_id(db, item)
