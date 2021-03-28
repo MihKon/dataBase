@@ -8,5 +8,12 @@
       <jdbc-url>jdbc:sqlite:C:\Users\owner\PycharmProjects\dataBase\sql_app.db</jdbc-url>
       <working-dir>$ProjectFileDir$</working-dir>
     </data-source>
+    <data-source source="LOCAL" name="sql_app [2]" uuid="c1079303-b850-4f7e-bc58-61d106a99acb">
+      <driver-ref>sqlite.xerial</driver-ref>
+      <synchronize>true</synchronize>
+      <jdbc-driver>org.sqlite.JDBC</jdbc-driver>
+      <jdbc-url>jdbc:sqlite:C:\Users\owner\PycharmProjects\dataBase\sql_app\sql_app.db</jdbc-url>
+      <working-dir>$ProjectFileDir$</working-dir>
+    </data-source>
   </component>
 </project>
